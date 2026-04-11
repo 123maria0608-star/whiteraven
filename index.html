@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>White Raven — Felton, CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">White Raven</a>
+    <ul class="nav-links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#order" class="nav-cta">Order Online</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">Our Story</a></li>
+      <li><a href="#menu" class="mobile-link">Menu</a></li>
+      <li><a href="#visit" class="mobile-link">Visit</a></li>
+      <li><a href="#order" class="mobile-link">Order Online</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-forest"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Since 1983 · Felton, California</p>
+      <h1 class="hero-title">A Taste of<br /><em>Serenity</em></h1>
+      <p class="hero-sub">Specialty coffee & legendary chai, nestled in the heart of the Santa Cruz Mountains.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">Explore the Menu</a>
+        <a href="#visit" class="btn btn-ghost">Find Us</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Specialty Coffee</span><span class="dot">·</span>
+      <span>Award-Winning Chai</span><span class="dot">·</span>
+      <span>Freshly Baked Pastries</span><span class="dot">·</span>
+      <span>Dog Friendly</span><span class="dot">·</span>
+      <span>Santa Cruz Mountains</span><span class="dot">·</span>
+      <span>Specialty Coffee</span><span class="dot">·</span>
+      <span>Award-Winning Chai</span><span class="dot">·</span>
+      <span>Freshly Baked Pastries</span><span class="dot">·</span>
+      <span>Dog Friendly</span><span class="dot">·</span>
+      <span>Santa Cruz Mountains</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-photo-frame">
+          <div class="about-photo about-photo-1 place-photo" data-photo-slot="about-hero" aria-label="White Raven photo"></div>
+          <div class="about-photo about-photo-2 place-photo" data-photo-slot="about-detail" aria-label="White Raven photo"></div>
+          <div class="about-badge">Est. 1983</div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">More Than a<br />Coffee Shop</h2>
+        <p class="body-text">For over four decades, White Raven has been a sanctuary tucked along Highway 9 in the redwoods of Felton. What started as a neighborhood gathering place has grown into a beloved institution — a spot where locals come for the coffee and stay for the community.</p>
+        <p class="body-text">We brew Peerless Coffee with intention, craft our chai from scratch, and bake everything fresh. The mountains outside the window aren't just scenery — they're our inspiration.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">40+</span>
+            <span class="stat-label">Years Brewing</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">#1</span>
+            <span class="stat-label">Chai in Santa Cruz County</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">268</span>
+            <span class="stat-label">Yelp Reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE DRINKS FEATURE -->
+  <section class="feature-drinks section" id="drinks">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">What We're Known For</p>
+        <h2 class="section-title">Crafted With Care</h2>
+      </div>
+      <div class="drinks-grid">
+        <div class="drink-card fade-in" style="--delay: 0s">
+          <div class="drink-icon">&#9749;</div>
+          <div class="drink-img drink-espresso place-photo" data-photo-slot="drink-espresso" aria-label="White Raven espresso photo"></div>
+          <h3>Espresso & Lattes</h3>
+          <p>Pulled from Peerless Coffee beans, our espresso drinks are rich, balanced, and made to order.</p>
+        </div>
+        <div class="drink-card drink-card--featured fade-in" style="--delay: 0.15s">
+          <div class="drink-badge-label">House Favorite</div>
+          <div class="drink-icon">&#127861;</div>
+          <div class="drink-img drink-chai place-photo" data-photo-slot="drink-chai" aria-label="White Raven chai photo"></div>
+          <h3>Legendary Chai</h3>
+          <p>Our house-blended chai is widely celebrated as the best in Santa Cruz County — warming, spiced, and unforgettable.</p>
+        </div>
+        <div class="drink-card fade-in" style="--delay: 0.3s">
+          <div class="drink-icon">&#127859;</div>
+          <div class="drink-img drink-pastry place-photo" data-photo-slot="drink-pastry" aria-label="White Raven pastry photo"></div>
+          <h3>Fresh Pastries</h3>
+          <p>Baked fresh daily, our pastries and breakfast items are the perfect pairing for your morning ritual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL MENU -->
+  <section class="menu section" id="menu">
+    <div class="menu-bg"></div>
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title" style="color: var(--cream)">The Menu</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-category fade-in">
+          <h3 class="menu-cat-title">Espresso Bar</h3>
+          <ul class="menu-list">
+            <li><span>Espresso</span><span>$3.50</span></li>
+            <li><span>Americano</span><span>$4.00</span></li>
+            <li><span>Cappuccino</span><span>$4.50</span></li>
+            <li><span>Latte</span><span>$5.00</span></li>
+            <li><span>Mocha</span><span>$5.50</span></li>
+            <li><span>Oat / Almond Milk</span><span>+$0.75</span></li>
+          </ul>
+        </div>
+        <div class="menu-category fade-in">
+          <h3 class="menu-cat-title">Specialty Drinks</h3>
+          <ul class="menu-list">
+            <li><span>House Chai Latte</span><span>$5.50</span></li>
+            <li><span>Dirty Chai</span><span>$6.00</span></li>
+            <li><span>Iced Chai</span><span>$5.50</span></li>
+            <li><span>Seasonal Latte</span><span>$5.50</span></li>
+            <li><span>Matcha Latte</span><span>$5.50</span></li>
+            <li><span>Hot Cocoa</span><span>$4.50</span></li>
+          </ul>
+        </div>
+        <div class="menu-category fade-in">
+          <h3 class="menu-cat-title">Tea & Brew</h3>
+          <ul class="menu-list">
+            <li><span>Drip Coffee</span><span>$3.25</span></li>
+            <li><span>Pour Over</span><span>$5.00</span></li>
+            <li><span>Cold Brew</span><span>$5.00</span></li>
+            <li><span>Herbal Tea</span><span>$3.50</span></li>
+            <li><span>Black Tea</span><span>$3.50</span></li>
+            <li><span>Green Tea</span><span>$3.50</span></li>
+          </ul>
+        </div>
+        <div class="menu-category fade-in">
+          <h3 class="menu-cat-title">Food</h3>
+          <ul class="menu-list">
+            <li><span>Croissant</span><span>$4.00</span></li>
+            <li><span>Muffin</span><span>$3.50</span></li>
+            <li><span>Scone</span><span>$3.75</span></li>
+            <li><span>Breakfast Sandwich</span><span>$7.50</span></li>
+            <li><span>Avocado Toast</span><span>$8.00</span></li>
+            <li><span>Granola Bowl</span><span>$6.50</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-note fade-in">
+        <p>Menu items and prices subject to change. Ask us about seasonal specials.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE / GALLERY SECTION -->
+  <section class="atmosphere section" id="atmosphere">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Come As You Are</p>
+        <h2 class="section-title">The White Raven<br />Experience</h2>
+      </div>
+      <div class="atm-grid fade-in">
+        <div class="atm-card atm-card--tall">
+          <div class="atm-bg atm-bg-1 place-photo" data-photo-slot="atmosphere-redwoods" aria-label="White Raven surroundings photo"></div>
+          <div class="atm-label">Redwood Surroundings</div>
+        </div>
+        <div class="atm-col">
+          <div class="atm-card">
+            <div class="atm-bg atm-bg-2 place-photo" data-photo-slot="atmosphere-patio" aria-label="White Raven patio photo"></div>
+            <div class="atm-label">Dog Friendly</div>
+          </div>
+          <div class="atm-card">
+            <div class="atm-bg atm-bg-3 place-photo" data-photo-slot="atmosphere-study" aria-label="White Raven workspace photo"></div>
+            <div class="atm-label">Work & Study</div>
+          </div>
+        </div>
+        <div class="atm-card atm-card--tall">
+          <div class="atm-bg atm-bg-4 place-photo" data-photo-slot="atmosphere-community" aria-label="White Raven community photo"></div>
+          <div class="atm-label">Community Corner</div>
+        </div>
+      </div>
+      <div class="atm-perks fade-in">
+        <div class="perk"><span class="perk-icon">&#128054;</span><span>Dog Friendly Patio</span></div>
+        <div class="perk"><span class="perk-icon">&#128246;</span><span>Free Wi-Fi</span></div>
+        <div class="perk"><span class="perk-icon">&#128218;</span><span>Great for Work & Study</span></div>
+        <div class="perk"><span class="perk-icon">&#128106;</span><span>Family Welcoming</span></div>
+        <div class="perk"><span class="perk-icon">&#127807;</span><span>Redwood Forest Setting</span></div>
+        <div class="perk"><span class="perk-icon">&#127863;</span><span>Online Ordering</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section">
+    <div class="testimonials-bg"></div>
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label" style="color: var(--amber)">What People Say</p>
+        <h2 class="section-title" style="color: var(--cream)">Loved by the Mountains</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"The best chai I've ever had — and I've tried them all. White Raven's is on another level. I drive 30 minutes just for this."</p>
+          <cite>— Jessica M., Santa Cruz</cite>
+        </div>
+        <div class="testimonial testimonial--featured fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"A hidden gem in the redwoods. The atmosphere is magical, the coffee is excellent, and the staff makes you feel like a regular from day one."</p>
+          <cite>— Daniel R., Los Gatos</cite>
+        </div>
+        <div class="testimonial fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"My go-to morning stop on Highway 9 for years. Nothing beats sitting on the patio with a mocha and listening to the redwoods."</p>
+          <cite>— Sarah K., Scotts Valley</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT / HOURS / MAP -->
+  <section class="visit section" id="visit">
+    <div class="container visit-grid">
+      <div class="visit-info fade-in">
+        <p class="section-label">Come See Us</p>
+        <h2 class="section-title">Hours &<br />Location</h2>
+        <div class="hours-block">
+          <div class="hours-row">
+            <span>Monday – Thursday</span>
+            <span>7:30 AM – 1:30 PM</span>
+          </div>
+          <div class="hours-row">
+            <span>Friday – Saturday</span>
+            <span>7:30 AM – 2:30 PM</span>
+          </div>
+          <div class="hours-row closed">
+            <span>Sunday</span>
+            <span>Closed</span>
+          </div>
+        </div>
+        <div class="address-block">
+          <p class="address-line"><strong>6253 Highway 9</strong></p>
+          <p class="address-line">Felton, CA 95018</p>
+          <a href="tel:8313353611" class="address-phone">(831) 335-3611</a>
+        </div>
+        <div class="visit-actions">
+          <a href="https://maps.google.com/?q=6253+Hwy+9+Felton+CA+95018" target="_blank" class="btn btn-primary">Get Directions</a>
+          <a href="#order" class="btn btn-outline">Order Online</a>
+        </div>
+      </div>
+      <div class="visit-map fade-in">
+        <div class="map-frame">
+          <iframe
+            title="White Raven location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.0!2d-122.0631!3d37.0513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e03b8e1c46b45%3A0x5c5b7f0e7a7e4f60!2s6253%20CA-9%2C%20Felton%2C%20CA%2095018!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER CTA -->
+  <section class="order-cta" id="order">
+    <div class="order-bg"></div>
+    <div class="container order-content fade-in">
+      <p class="section-label" style="color: var(--amber)">Skip the Line</p>
+      <h2 class="section-title" style="color: var(--cream)">Order Ahead,<br />Pick Up Fresh</h2>
+      <p class="body-text" style="color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 2.5rem;">Your morning ritual, made even easier. Order online and have your drink ready when you walk through the door.</p>
+      <a href="https://www.doordash.com" target="_blank" class="btn btn-primary btn-large">Order on DoorDash</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">White Raven</p>
+        <p class="footer-tagline">A taste of serenity since 1983.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/white_raven_pour_house/" target="_blank" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/p/White-Raven-100054660180811/" target="_blank" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+          <li><a href="#order">Order Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Visit</h4>
+        <ul>
+          <li>6253 Highway 9</li>
+          <li>Felton, CA 95018</li>
+          <li><a href="tel:8313353611">(831) 335-3611</a></li>
+          <li>Mon–Thu: 7:30–1:30</li>
+          <li>Fri–Sat: 7:30–2:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 White Raven. All rights reserved. · Felton, CA</p>
+      <p class="photo-credits" id="photoCredits" hidden></p>
+    </div>
+  </footer>
+
+  <script>
+    window.WHITE_RAVEN_CONFIG = Object.assign(
+      {
+        googlePlacesApiKey: '',
+        placeTextQuery: 'White Raven, 6253 Highway 9, Felton, CA 95018',
+      },
+      window.WHITE_RAVEN_CONFIG || {}
+    );
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
