@@ -675,8 +675,8 @@ h1, h2, h3 {
 .atmosphere { background: var(--dark); }
 .atm-grid {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1.15fr 1fr 1.15fr;
+  grid-template-rows: 300px 300px;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -692,8 +692,9 @@ h1, h2, h3 {
   cursor: pointer;
 }
 .atm-card:hover .atm-bg { transform: scale(1.04); }
-.atm-card--tall { height: 400px; }
-.atm-col .atm-card { height: 192px; }
+.atm-card--tall { grid-row: span 2; height: auto; }
+.atm-col { grid-row: span 2; display: flex; flex-direction: column; gap: 1rem; }
+.atm-col .atm-card { flex: 1; height: auto; min-height: 0; }
 .atm-bg {
   width: 100%;
   height: 100%;
@@ -703,7 +704,7 @@ h1, h2, h3 {
 .atm-bg-1 {
   background:
     linear-gradient(135deg, #0a1a06 0%, #122510 40%, #0d1c0a 70%, #080f06 100%);
-  height: 400px;
+  height: 100%;
 }
 .atm-bg-1::after {
   content: '';
@@ -713,15 +714,15 @@ h1, h2, h3 {
 }
 .atm-bg-2 {
   background: linear-gradient(135deg, #1a0f06 0%, #2a1a0a 40%, #1a1208 100%);
-  height: 192px;
+  height: 100%;
 }
 .atm-bg-3 {
   background: linear-gradient(135deg, #0d1208 0%, #181e10 40%, #0f150a 100%);
-  height: 192px;
+  height: 100%;
 }
 .atm-bg-4 {
   background: linear-gradient(135deg, #12100a 0%, #1e1a12 40%, #15120c 100%);
-  height: 400px;
+  height: 100%;
 }
 .atm-label {
   position: absolute;
@@ -983,12 +984,13 @@ h1, h2, h3 {
   .menu-grid { grid-template-columns: 1fr; }
   .atm-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 300px 200px 200px 300px;
   }
-  .atm-col { flex-direction: row; }
-  .atm-card--tall { height: 300px; }
-  .atm-col .atm-card { flex: 1; height: 180px; }
+  .atm-card--tall { grid-row: span 1; height: 300px; }
+  .atm-col { grid-row: span 2; flex-direction: row; gap: 1rem; }
+  .atm-col .atm-card { flex: 1; height: 200px; }
   .atm-bg-1, .atm-bg-4 { height: 300px; }
+  .atm-bg-2, .atm-bg-3 { height: 200px; }
   .atm-perks { grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid {
     grid-template-columns: 1fr;
