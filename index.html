@@ -16,6 +16,7 @@
     <a href="#" class="nav-logo">White Raven</a>
     <ul class="nav-links">
       <li><a href="#about">Our Story</a></li>
+      <li><a href="#chai">Larry's Chai</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#visit">Visit</a></li>
       <li><a href="#order" class="nav-cta">Order Online</a></li>
@@ -29,6 +30,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#about" class="mobile-link">Our Story</a></li>
+      <li><a href="#chai" class="mobile-link">Larry's Chai</a></li>
       <li><a href="#menu" class="mobile-link">Menu</a></li>
       <li><a href="#visit" class="mobile-link">Visit</a></li>
       <li><a href="#order" class="mobile-link">Order Online</a></li>
@@ -38,8 +40,9 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <div class="hero-overlay"></div>
+      <div class="hero-photo place-photo" data-photo-slot="hero-main"></div>
       <div class="hero-forest"></div>
+      <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
       <p class="hero-eyebrow">Since 1983 · Felton, California</p>
@@ -60,12 +63,12 @@
   <div class="marquee-strip">
     <div class="marquee-track">
       <span>Specialty Coffee</span><span class="dot">·</span>
-      <span>Award-Winning Chai</span><span class="dot">·</span>
+      <span>Larry's Famous Chai</span><span class="dot">·</span>
       <span>Freshly Baked Pastries</span><span class="dot">·</span>
       <span>Dog Friendly</span><span class="dot">·</span>
       <span>Santa Cruz Mountains</span><span class="dot">·</span>
       <span>Specialty Coffee</span><span class="dot">·</span>
-      <span>Award-Winning Chai</span><span class="dot">·</span>
+      <span>Larry's Famous Chai</span><span class="dot">·</span>
       <span>Freshly Baked Pastries</span><span class="dot">·</span>
       <span>Dog Friendly</span><span class="dot">·</span>
       <span>Santa Cruz Mountains</span><span class="dot">·</span>
@@ -86,7 +89,7 @@
         <p class="section-label">Our Story</p>
         <h2 class="section-title">More Than a<br />Coffee Shop</h2>
         <p class="body-text">For over four decades, White Raven has been a sanctuary tucked along Highway 9 in the redwoods of Felton. What started as a neighborhood gathering place has grown into a beloved institution — a spot where locals come for the coffee and stay for the community.</p>
-        <p class="body-text">We brew Peerless Coffee with intention, craft our chai from scratch, and bake everything fresh. The mountains outside the window aren't just scenery — they're our inspiration.</p>
+        <p class="body-text">Larry's house-blended chai — slow-simmered from whole spices every morning — is the stuff of legend across Santa Cruz County. Paired with Peerless Coffee pulled with care, and pastries baked fresh daily, every visit feels like coming home.</p>
         <div class="about-stats">
           <div class="stat">
             <span class="stat-number">40+</span>
@@ -120,11 +123,12 @@
           <p>Pulled from Peerless Coffee beans, our espresso drinks are rich, balanced, and made to order.</p>
         </div>
         <div class="drink-card drink-card--featured fade-in" style="--delay: 0.15s">
-          <div class="drink-badge-label">House Favorite</div>
+          <div class="drink-badge-label">Larry's Signature</div>
           <div class="drink-icon">&#127861;</div>
           <div class="drink-img drink-chai place-photo" data-photo-slot="drink-chai" aria-label="White Raven chai photo"></div>
-          <h3>Legendary Chai</h3>
-          <p>Our house-blended chai is widely celebrated as the best in Santa Cruz County — warming, spiced, and unforgettable.</p>
+          <h3>Larry's Famous Chai</h3>
+          <p>Slow-simmered from whole spices, made from scratch every morning. Widely celebrated as the best chai in Santa Cruz County.</p>
+          <a href="#chai" class="drink-card-link">The full story ↓</a>
         </div>
         <div class="drink-card fade-in" style="--delay: 0.3s">
           <div class="drink-icon">&#127859;</div>
@@ -132,6 +136,57 @@
           <h3>Fresh Pastries</h3>
           <p>Baked fresh daily, our pastries and breakfast items are the perfect pairing for your morning ritual.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LARRY'S CHAI SPOTLIGHT -->
+  <section class="chai-spotlight" id="chai">
+    <div class="chai-photo place-photo" data-photo-slot="chai-spotlight"></div>
+    <div class="chai-overlay"></div>
+    <div class="container chai-inner">
+      <div class="chai-text fade-in">
+        <p class="section-label">The House Legend</p>
+        <h2 class="chai-heading">Larry's<br /><em>Famous Chai</em></h2>
+        <div class="chai-rule"></div>
+        <p class="chai-desc">Born from a secret blend of whole spices, slow-simmered for hours every single morning — Larry's chai isn't just a drink. It's the reason people drive across the county. Warming, deeply layered, and utterly unforgettable.</p>
+        <div class="chai-details">
+          <div class="chai-detail-item">
+            <span class="chai-detail-icon">🌿</span>
+            <div>
+              <strong>Whole Spice Blend</strong>
+              <p>Cinnamon, cardamom, ginger, clove &amp; black pepper — never from a powder</p>
+            </div>
+          </div>
+          <div class="chai-detail-item">
+            <span class="chai-detail-icon">🔥</span>
+            <div>
+              <strong>Made From Scratch Daily</strong>
+              <p>Slow-simmered every morning — no concentrates, no shortcuts</p>
+            </div>
+          </div>
+          <div class="chai-detail-item">
+            <span class="chai-detail-icon">🏆</span>
+            <div>
+              <strong>Rated #1 in Santa Cruz County</strong>
+              <p>Four decades perfecting a recipe that people can't stop talking about</p>
+            </div>
+          </div>
+        </div>
+        <div class="chai-variants">
+          <span>Hot Chai Latte &nbsp;$5.50</span>
+          <span>Dirty Chai &nbsp;$6.00</span>
+          <span>Iced Chai &nbsp;$5.50</span>
+        </div>
+      </div>
+      <div class="chai-visual fade-in" style="--delay: 0.2s">
+        <div class="chai-img-frame">
+          <div class="chai-main-img place-photo" data-photo-slot="drink-chai" aria-label="Larry's Famous Chai"></div>
+        </div>
+        <blockquote class="chai-quote">
+          <p>"The best chai I've ever had — and I've tried them all. White Raven's is on another level. I drive 30 minutes just for this."</p>
+          <cite>— Jessica M., Santa Cruz · Yelp Review</cite>
+        </blockquote>
       </div>
     </div>
   </section>
@@ -366,6 +421,7 @@
       window.WHITE_RAVEN_CONFIG || {}
     );
   </script>
+  <script src="js/config.local.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

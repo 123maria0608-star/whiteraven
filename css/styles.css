@@ -242,29 +242,35 @@ h1, h2, h3 {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13,13,11,0.3) 0%,
-    rgba(13,13,11,0.55) 50%,
-    rgba(13,13,11,0.75) 100%
+    rgba(13,13,11,0.35) 0%,
+    rgba(13,13,11,0.5) 50%,
+    rgba(13,13,11,0.7) 100%
   );
-  z-index: 1;
+  z-index: 2;
 }
+/* Real photo base layer */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: opacity 1s ease;
+}
+
 /* SVG forest / background using CSS */
 .hero-forest {
   position: absolute;
   inset: 0;
-  background:
-    /* Deep forest gradient sky */
-    radial-gradient(ellipse at 60% 0%, rgba(120, 80, 30, 0.25) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 100%, rgba(20, 60, 20, 0.4) 0%, transparent 50%),
-    linear-gradient(
-      180deg,
-      #1a2810 0%,
-      #0f1a0a 20%,
-      #0a130a 40%,
-      #060e06 70%,
-      #040a04 100%
-    );
-  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 40, 16, 0.45) 0%,
+    rgba(15, 26, 10, 0.5) 20%,
+    rgba(10, 19, 10, 0.65) 40%,
+    rgba(6, 14, 6, 0.82) 70%,
+    rgba(4, 10, 4, 0.96) 100%
+  );
+  z-index: 1;
 }
 /* Silhouette trees via pseudo-elements */
 .hero-forest::before {
@@ -274,6 +280,7 @@ h1, h2, h3 {
   left: 0;
   right: 0;
   height: 45%;
+  z-index: 2;
   background:
     /* Tree silhouettes */
     radial-gradient(ellipse 18px 280px at 5% 100%, #040804 49%, transparent 50%),
@@ -302,7 +309,7 @@ h1, h2, h3 {
 }
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   padding: 0 1.5rem;
   max-width: 700px;
@@ -344,6 +351,7 @@ h1, h2, h3 {
 }
 .hero-scroll {
   position: absolute;
+  z-index: 3;
   bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -996,4 +1004,180 @@ h1, h2, h3 {
   .about-stats { grid-template-columns: 1fr; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .atm-col { flex-direction: column; }
+}
+
+/* ============================================
+   DRINK CARD LINK
+   ============================================ */
+.drink-card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,137,74,0.3);
+  transition: color var(--transition), border-color var(--transition);
+}
+.drink-card-link:hover {
+  color: var(--amber-light);
+  border-color: var(--amber-light);
+}
+
+/* ============================================
+   LARRY'S FAMOUS CHAI SPOTLIGHT
+   ============================================ */
+.chai-spotlight {
+  position: relative;
+  padding: 7rem 0;
+  overflow: hidden;
+}
+.chai-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.chai-spotlight:hover .chai-photo { transform: scale(1.08); }
+.chai-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 13, 11, 0.97) 0%,
+    rgba(32, 16, 5, 0.94) 50%,
+    rgba(13, 13, 11, 0.92) 100%
+  );
+  z-index: 1;
+}
+.chai-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.chai-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--cream);
+  margin: 0.5rem 0 1.5rem;
+}
+.chai-heading em {
+  color: var(--amber-light);
+  font-style: italic;
+}
+.chai-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--amber);
+  margin-bottom: 1.75rem;
+}
+.chai-desc {
+  font-size: 1.05rem;
+  color: rgba(245,240,232,0.7);
+  line-height: 1.8;
+  margin-bottom: 2.25rem;
+  max-width: 480px;
+}
+.chai-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+.chai-detail-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.chai-detail-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.chai-detail-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--amber-light);
+  margin-bottom: 0.25rem;
+}
+.chai-detail-item p {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.48);
+  margin: 0;
+  line-height: 1.55;
+}
+.chai-variants {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.chai-variants span {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(201,137,74,0.09);
+  border: 1px solid rgba(201,137,74,0.22);
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.chai-img-frame {
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  position: relative;
+  border: 1px solid rgba(201,137,74,0.18);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+}
+.chai-main-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #2d1508 0%, #4a2010 30%, #6b3018 60%, #3d1e0a 100%);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+.chai-img-frame:hover .chai-main-img { transform: scale(1.04); }
+.chai-quote {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 2px solid var(--amber);
+  background: rgba(255,255,255,0.025);
+  border-radius: 0 4px 4px 0;
+}
+.chai-quote p {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(245,240,232,0.68);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+.chai-quote cite {
+  font-size: 0.68rem;
+  color: var(--amber-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (max-width: 1024px) {
+  .chai-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .chai-desc { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  .chai-img-frame { aspect-ratio: 4/3; }
+  .chai-spotlight { padding: 5rem 0; }
 }
