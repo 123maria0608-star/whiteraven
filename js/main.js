@@ -120,90 +120,37 @@ const photoElements = photoSlots
 const photoCredits = document.getElementById('photoCredits');
 
 async function loadPlacePhotos() {
-  const config = window.WHITE_RAVEN_CONFIG || {};
-  const apiKey = config.googlePlacesApiKey ? config.googlePlacesApiKey.trim() : '';
-  const textQuery = config.placeTextQuery || 'White Raven, 6253 Highway 9, Felton, CA 95018';
+  const { fallbackPhotoBySlot } = getPhotoConfig();
+  showFallbackPhotos(fallbackPhotoBySlot);
+}
 
-  if (!apiKey || photoElements.length === 0) {
-    if (!apiKey) {
-      console.warn('White Raven Places photos are disabled because WHITE_RAVEN_CONFIG.googlePlacesApiKey is empty.');
-    }
+function getPhotoConfig() {
+  const config = window.WHITE_RAVEN_CONFIG || {};
+  return {
+    fallbackPhotoBySlot: config.fallbackPhotoBySlot && typeof config.fallbackPhotoBySlot === 'object' ? config.fallbackPhotoBySlot : {}
+  };
+}
+
+function showFallbackPhotos(fallbackPhotoBySlot) {
+  const slots = Object.entries(fallbackPhotoBySlot).filter(([, photo]) => photo && photo.photoUri);
+  if (slots.length === 0) {
     return;
   }
 
-  try {
-    const searchResponse = await fetch('https://places.googleapis.com/v1/places:searchText', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': 'places.displayName,places.photos'
-      },
-      body: JSON.stringify({
-        textQuery,
-        maxResultCount: 1,
-        languageCode: 'en'
-      })
-    });
-
-    if (!searchResponse.ok) {
-      throw new Error(`Text Search failed with ${searchResponse.status}`);
-    }
-
-    const searchData = await searchResponse.json();
-    const place = searchData.places && searchData.places[0];
-    const photos = place && Array.isArray(place.photos) ? place.photos : [];
-
-    if (photos.length === 0) {
-      console.warn('Places API returned no photos for the configured White Raven query.');
-      return;
-    }
-
-    const selectedPhotos = photos.slice(0, Math.min(photos.length, 6));
-    const resolvedPhotos = await Promise.all(selectedPhotos.map(photo => getPhotoMedia(photo, apiKey)));
-    const usablePhotos = resolvedPhotos.filter(Boolean);
-
-    if (usablePhotos.length === 0) {
-      console.warn('Places API photo metadata resolved, but no photo URLs were returned.');
-      return;
-    }
-
-    photoElements.forEach((element, index) => {
-      const photo = usablePhotos[index % usablePhotos.length];
-      element.style.backgroundImage = `url("${photo.photoUri}")`;
-      element.classList.add('is-loaded');
-    });
-
-    renderPhotoCredits(usablePhotos, place.displayName && place.displayName.text);
-  } catch (error) {
-    console.error('Unable to load White Raven photos from Google Places.', error);
-  }
+  slots.forEach(([slot, photo]) => applyPhotoToSlot(slot, photo));
+  renderPhotoCredits(slots.map(([, photo]) => photo), 'White Raven');
 }
 
-async function getPhotoMedia(photo, apiKey) {
-  if (!photo || !photo.name) {
-    return null;
+function applyPhotoToSlot(slot, photo) {
+  const element = document.querySelector(`[data-photo-slot="${slot}"]`);
+  if (!element || !photo.photoUri) {
+    return;
   }
 
-  const url = new URL(`https://places.googleapis.com/v1/${photo.name}/media`);
-  url.searchParams.set('maxWidthPx', '1600');
-  url.searchParams.set('skipHttpRedirect', 'true');
-  url.searchParams.set('key', apiKey);
-
-  const response = await fetch(url.toString());
-  if (!response.ok) {
-    return null;
-  }
-
-  const data = await response.json();
-  if (!data.photoUri) {
-    return null;
-  }
-
-  return {
-    photoUri: data.photoUri,
-    authorAttributions: Array.isArray(photo.authorAttributions) ? photo.authorAttributions : []
-  };
+  element.style.backgroundImage = `url("${photo.photoUri}")`;
+  element.style.backgroundSize = photo.backgroundSize || 'cover';
+  element.style.backgroundPosition = photo.backgroundPosition || 'center';
+  element.classList.add('is-loaded');
 }
 
 function renderPhotoCredits(photos, placeName) {
